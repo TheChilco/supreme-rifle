@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public TerrainGenerator terrainGenerator;
     public float maxRaycastDistance = 1000f;
+    public int renderDistance = 10;
 
     void Start()
     {
