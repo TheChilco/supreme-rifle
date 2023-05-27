@@ -123,6 +123,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &325080778 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7583178101770455595, guid: 208d9f06464bc054b8034183d28cdedf,
+    type: 3}
+  m_PrefabInstance: {fileID: 7583178100813070084}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d482eaca6e37c24f9e50544c5a598e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +315,7 @@ GameObject:
   m_Layer: 0
   m_Name: Test
   m_TagString: Untagged
-  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -319,12 +331,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c72a759f77c3fb1408e38270b9d02379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 256
-  depth: 256
-  heightScale: 13
-  detailScale: 64
-  terrainMaterial: {fileID: 2100000, guid: e49e282843cd15741a5eea37de67bc31, type: 2}
-  voxelSize: 1
+  chunkSize: 16
+  heightScale: 24
+  detailScale: 10
+  voxelPrefab: {fileID: 1216082524726144954, guid: 6831dc5f232f7ec44abb0b9738cb72e3,
+    type: 3}
+  playerController: {fileID: 325080778}
+  player: {fileID: 0}
 --- !u!64 &1902510765
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -355,7 +368,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902510763}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -424,17 +437,17 @@ PrefabInstance:
     - target: {fileID: 7583178101770455594, guid: 208d9f06464bc054b8034183d28cdedf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7583178101770455594, guid: 208d9f06464bc054b8034183d28cdedf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7583178101770455594, guid: 208d9f06464bc054b8034183d28cdedf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7583178101770455594, guid: 208d9f06464bc054b8034183d28cdedf,
         type: 3}
@@ -473,8 +486,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7583178101770455595, guid: 208d9f06464bc054b8034183d28cdedf,
         type: 3}
+      propertyPath: renderDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583178101770455595, guid: 208d9f06464bc054b8034183d28cdedf,
+        type: 3}
       propertyPath: terrainGenerator
       value: 
       objectReference: {fileID: 1902510764}
+    - target: {fileID: 7583178101770455595, guid: 208d9f06464bc054b8034183d28cdedf,
+        type: 3}
+      propertyPath: maxRaycastDistance
+      value: 1500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 208d9f06464bc054b8034183d28cdedf, type: 3}
