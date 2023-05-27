@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
 {
     public TerrainGenerator terrainGenerator;
     public float maxRaycastDistance = 1000f;
-    public int renderDistance = 10;
 
     void Start()
     {
@@ -16,9 +15,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Every Frame
-        if(Input.GetKeyDown("1")){
-            renderDistance = 1;
-        }
     }
 
     private void PositionPlayerOnTerrain()
