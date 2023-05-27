@@ -8,10 +8,11 @@ public class TerrainGenerator : MonoBehaviour
     public float heightScale = 20f;
     public float detailScale = 25f;
     public Material terrainMaterial; // Assign this from the inspector
+    public float voxelSize = 3f; // The size of a single "voxel"
 
     private float xOffset, zOffset;
 
-    void Awake()
+    void Start()
     {
         xOffset = Random.Range(0f, 9999f);
         zOffset = Random.Range(0f, 9999f);
@@ -38,6 +39,10 @@ public class TerrainGenerator : MonoBehaviour
             {
                 int vertexIndex = z * width + x;
                 float y = Mathf.PerlinNoise((x + halfWidth + xOffset) / detailScale, (z + halfDepth + zOffset) / detailScale) * heightScale;
+                
+                // Snap y to the nearest voxelSize increment to create a voxel effect
+                y = Mathf.Round(y / voxelSize) * voxelSize;
+
                 vertices[vertexIndex] = new Vector3(x - halfWidth, y, z - halfDepth);
                 uvs[vertexIndex] = new Vector2(x / (float)width, z / (float)depth);
 
