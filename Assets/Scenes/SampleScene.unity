@@ -322,8 +322,9 @@ MonoBehaviour:
   width: 256
   depth: 256
   heightScale: 5
-  detailScale: 20
+  detailScale: 50
   terrainMaterial: {fileID: 2100000, guid: e49e282843cd15741a5eea37de67bc31, type: 2}
+  voxelSize: 1
 --- !u!64 &1902510765
 MeshCollider:
   m_ObjectHideFlags: 0
